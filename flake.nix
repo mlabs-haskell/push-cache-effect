@@ -4,7 +4,7 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
 
     # pr branch
-    hercules-ci-effects.url = "github:zmrocze/hercules-ci-effects?ref=karol/push-cache-effect";
+    hercules-ci-effects.url = "github:mlabs-haskell/hercules-ci-effects/push-cache-effect";
     
     # useful till attic lands in nixpkgs: https://github.com/NixOS/nixpkgs/pull/274481
     attic = {
