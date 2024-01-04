@@ -16,8 +16,10 @@
   };
   outputs = inputs @ {flake-parts, hercules-ci-effects, attic, nixpkgs, ...}:
   let
+    inherit (import nixpkgs { system = "x86_64-linux"; }) writeTextFile;
     hello = (import nixpkgs { system = "x86_64-linux"; }).hello;
     hello-darwin = (import nixpkgs { system = "x86_64-darwin"; }).hello;
+    
   in
     flake-parts.lib.mkFlake {
       inherit inputs;
@@ -39,13 +41,13 @@
             type = "attic";
             secretName = "push-cache-effect-attic-push-token";
             branches = null; # all branches
-            packages = [hello];
+            packages = [(writeTextFile { name = "bologna.txt"; text = "Bologna";})];
           };
           mlabs-cachix = {
             type = "cachix";
             secretName = "push-cache-effect-cachix-push-token";
             branches = ["main" "master" "push-to-attic"];
-            packages = [hello hello-darwin];
+            packages = [(writeTextFile { name = "bologna.txt"; text = "Bologna";})];
           };
         };
       };
