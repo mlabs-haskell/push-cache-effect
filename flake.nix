@@ -37,13 +37,13 @@
         caches = {
           mlabs-attic = {
             type = "attic";
-            secretName = "attic-test-token";
+            secretName = "push-cache-effect-attic-push-token";
             branches = null; # all branches
             packages = [hello];
           };
           mlabs-cachix = {
             type = "cachix";
-            secretName = "cachix-test-token";
+            secretName = "push-cache-effect-cachix-push-token";
             branches = ["main" "master" "push-to-attic"];
             packages = [hello hello-darwin];
           };
