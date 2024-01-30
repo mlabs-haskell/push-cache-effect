@@ -41,13 +41,13 @@
             type = "attic";
             secretName = "push-cache-effect-attic-push-token";
             branches = null; # all branches
-            packages = [(writeTextFile { name = "Firenza.txt"; text = "Firenza";})];
+            packages = [(writeTextFile { name = "bologna.txt"; text = "Bologna!";})];
           };
           mlabs-cachix = {
             type = "cachix";
             secretName = "push-cache-effect-cachix-push-token";
             branches = ["main" "master" "push-to-attic"];
-            packages = [(writeTextFile { name = "Firenza.txt"; text = "Firenza";})];
+            packages = [(writeTextFile { name = "bologna.txt"; text = "Bologna!";})];
           };
         };
       };
